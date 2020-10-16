@@ -11,8 +11,8 @@ const Navbar = (props) => {
     const Strings = {
         eng: {
             home: "Home",
-            about: "AboutUs",
-            contentUs: "ContentUs",
+            about: "About Us",
+            contentUs: "Contact Us",
             service: "Services",
             project: "Projects"
         }, mm: {
@@ -34,79 +34,83 @@ const Navbar = (props) => {
     };
     console.log(selecteddOption.value)
 
-    const desktopNavbar = <div className="container-fluid "
+    const desktopNavbar = <div className="container-fluid"
         style={{ background: " linear-gradient(to bottom, #DBE4E3, #E2EBEA,#DBE4E3)", fontSize: 15, fontFamily: 'Cambo', position: 'fixed', zIndex: 1000 }}>
-        <div className="row" style={{ display: "d-flex", justifyContent: "flex-start" }}>
-            <div className="col-sm-4" >
-                <img width={100} height={80} src={process.env.PUBLIC_URL + '/kumo_tran.png'}></img>
-                <text fontWeight={20} style={{ fontSize: 18, fontFamily: 'Cambo', color: '#121212' }}> Kumo Solutions</text>
+        <div className="d-flex flex-row justify-content-between">
+            <div className="col-sm-3 col-md-4">
+                <div className="row">
+                <div className="pl-0"><img width={100} height={80} src={process.env.PUBLIC_URL + '/kumo_tran.png'}></img></div>
+                <div className="pt-5 px-2">
+                    <text fontWeight={20} style={{ fontSize: 18, fontFamily: 'Cambo', color: '#121212' }}> Kumo Solutions</text>
+                 </div>
+                </div>
             </div>
+            <div className="col-sm-9 col-md-8">
+                <div className="d-flex flex-row" style={{marginRight:'20px'}}>
+                <div className="pt-5 col-2" >
+                    <Link to="/" style={{ fontSize: 16, fontFamily: 'Cambo', color: '#121212' }}>
+                        {Strings[selecteddOption.value].home}
+                    </Link>
+                </div>
+                <div className="pt-5 col-2">
+                    <Link to="/aboutUs" style={{ fontSize: 16, fontFamily: 'Cambo', color: '#121212' }}>
+                        {Strings[selecteddOption.value].about}
+                    </Link>
+                </div>
+                <div className=" pt-5 col-2">
+                    <Link to="/contactUs" style={{ fontSize: 16, fontFamily: 'Cambo', color: '#121212' }}>
+                        {Strings[selecteddOption.value].contentUs}</Link>
+                </div>
+                <div className=" pt-5 col-2 ">
+                    <Link to="/services" style={{ fontSize: 16, fontFamily: 'Cambo', color: '#121212' }}>
+                        {Strings[selecteddOption.value].service}</Link>
+                </div>
+                <div className="pt-5 col-2 ">
+                    <Link to="/project" style={{ fontSize: 16, fontFamily: 'Cambo', color: '#121212' }}>
+                        {Strings[selecteddOption.value].project} </Link>
+                </div>
 
-            <div className="spacer" style={{ fontWeight: 0, height: "10px", width: "5px" }}></div>
+                <div className="pb-4 col-2 px-0" style={{marginTop:'32px'}}>
+                    <Selector
+                        value={selecteddOption}
+                        onChange={handleChange}
+                        options={Languages} />
+                </div>
+                </div>
 
-
-            <div className="pt-5 col-sm-1"  >
-                <Link to="/" style={{ fontSize: 16, fontFamily: 'Cambo', color: '#121212' }}>
-                    {Strings[selecteddOption.value].home}
-                </Link>
             </div>
-            <div className=" pt-5 col-sm-1">
-                <Link to="/aboutUs" style={{ fontSize: 16, fontFamily: 'Cambo', color: '#121212' }}>
-                    {Strings[selecteddOption.value].about}
-                </Link>
-            </div>
-            <div className=" pt-5 col-sm-1">
-                <Link to="/contactUs" style={{ fontSize: 16, fontFamily: 'Cambo', color: '#121212' }}>
-                    {Strings[selecteddOption.value].contentUs}</Link>
-            </div>
-            <div className=" pt-5 col-sm-1 ">
-                <Link to="/services" style={{ fontSize: 16, fontFamily: 'Cambo', color: '#121212' }}>
-                    {Strings[selecteddOption.value].service}</Link>
-            </div>
-            <div className="pt-5 col-sm-1 ">
-                <Link to="/project" style={{ fontSize: 16, fontFamily: 'Cambo', color: '#121212' }}>
-                    {Strings[selecteddOption.value].project} </Link>
-            </div>
-
-            <div className=" pr-5 py-5 col-sm-2 ">
-                <Selector
-                    value={selecteddOption}
-                    onChange={handleChange}
-                    options={Languages} />
-            </div>
-
         </div>
     </div >
     const mobileNavbar =
-        <div className="container-fluid "
+        <div className="container-fluid p-0"
             style={{ background: " linear-gradient(to bottom, #DBE4E3, #E2EBEA,#DBE4E3)", fontSize: 15, fontFamily: 'Cambo', position: 'relative' }}>
 
-            <div className="row" style={{ display: "flex", justifyContent: "flex-start" }}>
-                <div className="col-sm-6" >
+            <div className="d-flex flex-row justify-content-between">
+                <div className="" >
                     <img width={100} height={80} src={process.env.PUBLIC_URL + '/kumo_tran.png'}></img>
                     <text fontWeight={20} style={{ fontSize: 20, fontFamily: 'Cambo', color: '#121212' }}> Kumo Solutions</text>
                 </div>
-                <div className='spacer col-sm-4 pr-5'></div>
-                <div className="col-sm-2 pt-4  pb-2 " onClick={() => setShow(!show)} > <img className='pl-0' width="100" height="50" src={burger} /></div>
+                {/* <div className='spacer col-sm-4 pr-5'></div> */}
+                <div className="pt-3 pb-2 pr-0" onClick={() => setShow(!show)} > <img className='pl-0' width="70" height="50" src={burger} /></div>
             </div>
             {show &&
-                <div className="toggle">
-                    <div className="pt-5 row" >
-                        <Link to="/" onClick={() => setShow(!show)} style={{ fontSize: 20, fontFamily: 'Cambo', color: '#121212' }}>{Strings[selecteddOption.value].home}</Link>
+                <div className="toggle pl-3">
+                    <div className="pr-5 pt-5 row" >
+                        <div className="col-sm-4"><Link to="/" onClick={() => setShow(!show)} style={{ fontSize: 20, fontFamily: 'Cambo', color: '#121212' }}>{Strings[selecteddOption.value].home}</Link></div>
                     </div>
-                    <div className=" pt-5 row">
-                        <Link to="/aboutUs" onClick={() => setShow(!show)} style={{ fontSize: 20, fontFamily: 'Cambo', color: '#121212' }}>{Strings[selecteddOption.value].about}</Link>
+                    <div className="pr-5 pt-5 row">
+                        <div className="col-sm-4"><Link to="/aboutUs" onClick={() => setShow(!show)} style={{ fontSize: 20, fontFamily: 'Cambo', color: '#121212' }}>{Strings[selecteddOption.value].about}</Link></div>
                     </div>
-                    <div className=" pt-5 row">
-                        <Link to="/contactUs" onClick={() => setShow(!show)} style={{ fontSize: 20, fontFamily: 'Cambo', color: '#121212' }}>{Strings[selecteddOption.value].contentUs}</Link>
+                    <div className="pr-5 pt-5 row">
+                        <div className="col-sm-4"><Link to="/contactUs" onClick={() => setShow(!show)} style={{ fontSize: 20, fontFamily: 'Cambo', color: '#121212' }}>{Strings[selecteddOption.value].contentUs}</Link></div>
                     </div>
-                    <div className=" pt-5 row">
-                        <Link to="/services" onClick={() => setShow(!show)} style={{ fontSize: 20, fontFamily: 'Cambo', color: '#121212' }}> {Strings[selecteddOption.value].service}</Link>
+                    <div className="pr-5 pt-5 row">
+                        <div className="col-sm-4"><Link to="/services" onClick={() => setShow(!show)} style={{ fontSize: 20, fontFamily: 'Cambo', color: '#121212' }}> {Strings[selecteddOption.value].service}</Link></div>
                     </div>
-                    <div className="pt-5 row  ">
-                        <Link to="/project" onClick={() => setShow(!show)} style={{ fontSize: 20, fontFamily: 'Cambo', color: '#121212' }}>{Strings[selecteddOption.value].project} </Link>
+                    <div className="pr-5 pt-5 row  ">
+                        <div className="col-sm-4"><Link to="/project" onClick={() => setShow(!show)} style={{ fontSize: 20, fontFamily: 'Cambo', color: '#121212' }}>{Strings[selecteddOption.value].project} </Link></div>
                     </div>
-                    <div className=" pr-5 pt-5 row">
+                    <div className="pr-5 pt-5 row">
                         <div className='col-sm-4'>
                             <Selector
                                 value={selecteddOption}

@@ -6,7 +6,7 @@ const Footer = () => {
     const Phone = "+959-787830081"
     const Mail = "office@kumomyanmar.com"
     return (
-        <div className=" pt-3" >
+        <div className="pt-3" >
             <FooterCard Address={Address} Phone={Phone} Mail={Mail} />
         </div>
     )

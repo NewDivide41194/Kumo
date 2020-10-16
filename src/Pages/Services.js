@@ -14,10 +14,10 @@ const Services = () => {
     return (
 
         <div className="container-fluid">
-            <h1 style={{ textAlign: 'center', color: '#00000F', fontFamily: 'Cambo', fontSize: 20 }}>Kumo Solutions' Service and Technology</h1>
+            <h1 style={{ textAlign: 'center', marginTop:'30px', color: '#00000F', fontFamily: 'Cambo', fontSize: 20 }}>Kumo Solutions' Service and Technology</h1>
             <div className='row pt-5'>
 
-                <div className='col-sm-6' style={{ fontFamily: 'Cambo', fontSize: 15 }}>
+                <div className='pl-4 col-sm-6' style={{ fontFamily: 'Cambo', fontSize: 15 }}>
                     <p style={{ fontFamily: 'Cambo', fontSize: 13 }} >  We provides the following services:
                 <ul className="pt-2">
                             <li> Full-cycle Developer of Custom Enterprise Solutions with Extensive UX/UI</li>
@@ -32,7 +32,7 @@ const Services = () => {
                         </ul>
                     </p>
                 </div>
-                <div className='col-sm-6' style={{ fontFamily: 'Cambo', fontSize: 15 }}>
+                <div className='pl-4 col-sm-6' style={{ fontFamily: 'Cambo', fontSize: 15 }}>
                     <p style={{ fontFamily: 'Cambo', fontSize: 13 }}>We are using the following technologies:
                 <ul>
                             <li> Full-cycle Developer of Custom Enterprise Solutions with Extensive UX/UI</li>
@@ -49,13 +49,13 @@ const Services = () => {
                 </div>
             </div>
             <div className="row pt-5 pb-5">
-                <div className="col-sm-4 slide-in-down">
+                <div className="col-sm-4 col-md-4 slide-in-down">
                     <ServiceCard service={Service1} image={MobileAppLogo} />
                 </div>
-                <div className="col-sm-4">
+                <div className="col-sm-4 col-md-4">
                     <ServiceCard service={Service2} image={WebAppLogo} />
                 </div>
-                <div className="col-sm-4">
+                <div className="col-sm-4 col-md-4">
                     <ServiceCard service={Service3} image={MobileAppLogo} />
                 </div>
             </div>

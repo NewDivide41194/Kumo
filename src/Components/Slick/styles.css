@@ -113,7 +113,7 @@ button:hover {
   transform: translateY(-50%);
   z-index: 10;
   padding: 60px;
-  background: url('../../Images/nextArrow.png') no-repeat center center / 20px;
+  background: url('../../Images/forward.png') no-repeat center center / 27px;
   width: 50px;
   height: 50px;
   text-indent: 9999px;
@@ -121,7 +121,7 @@ button:hover {
 }
 
 .previousButton:hover, .nextButton:hover {
-  background: url('../../Images/nextArrow.png') no-repeat center center / 18px;
+  background: url('../../Images/forward.png') no-repeat center center / 30px;
 }
 
 .previousButton {
@@ -175,6 +175,7 @@ button:hover {
   color: #FFFFFF;
   font-size: 14px;
   line-height: 1.5;
+  letter-spacing: 2px;
   margin: 20px auto 30px;
   max-width: 640px;
 }

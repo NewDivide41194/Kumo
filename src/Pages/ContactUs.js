@@ -6,6 +6,7 @@ const ContactUs = () => {
         <div>
          
             <div >  <AddressCard /> </div>
+            <div className='spacer row pt-3'></div>
             <div>  <MapView /> </div>
         </div>
 
